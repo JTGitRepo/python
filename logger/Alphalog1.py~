@@ -1,0 +1,49 @@
+from sys import argv, exit
+from datetime import datetime
+from os.path import exists
+
+
+script, log = argv
+
+today = datetime.now()
+logTime = today.strftime('%m/%d/%Y %H:%M:%S - ')
+
+def paragraph(text):
+    textLength = len(text)
+    lineLength = 80
+    lineStart = 0
+    lineEnd = lineLength
+    paragraph = ''
+
+    #subtract the rest of the text and put it on the next line
+    while textLength > lineStart:
+        newLine = text[lineStart:lineEnd]   
+        lineStart = lineStart + lineLength 
+        lineEnd = lineEnd + lineLength 
+        paragraph = paragraph  + newLine 
+    return paragraph
+
+def mainLogFileMethod():
+    openFile = open(log, 'a+')
+    print openFile.read()
+    newLog = raw_input("Enter New Log: \n")
+    newLog = paragraph(newLog)
+    openFile.write('\n' + logTime + newLog)
+    openFile.seek(0)
+    print openFile.read()
+    openFile.close()
+
+def yesOrNo(): 
+    createNewLogFile = raw_input('Log file does not exist. Create log file %s?(y/n): ' % log)
+    if str(createNewLogFile).lower() == 'y' or str(createNewLogFile).lower() == 'yes':
+        mainLogFileMethod()
+    elif str(createNewLogFile).lower() == 'n' or str(createNewLogFile).lower() == 'no':
+        exit()
+    else:
+        print '%s is not an option' % createNewLogFile
+        yesOrNo()
+
+if exists(log):
+    mainLogFileMethod()
+else: 
+    yesOrNo()

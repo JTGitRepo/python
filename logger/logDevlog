@@ -1,0 +1,27 @@
+
+11/01/2016 18:17 - First log for logDevLog
+11/01/2016 18:18 - added option to cancel log.py if file does not exist. also reruns yesOrno() function if y or n is not used as answer
+11/01/2016 18:28 - how do you open a file from a different directory?..
+11/01/2016 20:06 - How do i turn a script into one command(drop the python call)? Shell variable? symbolic link? executable?
+11/01/2016 20:08 - Also, add in new paragraph function
+11/01/2016 20:09 - log
+01/11/2016 20:13:$S - test time format and seconds addition
+01/11/2016 20:13:44 - corrected seconds formatter
+01/11/2016 20:15:28 - add in ability to remove logs. 
+01/11/2016 20:16:16 - moving log.py into own 'logger' dir
+01/11/2016 20:41:55 - added paragraph function to log.py. still needs a little work but has improved. 
+still need to fully format text or drop log text below time display
+
+01/11/2016 21:31:31 - 
+dropped paragraph below time stamp
+01/11/2016 21:31:59 - 
+still adding newline above time stamp
+01/11/2016 21:32:14 - 
+correction: not adding newline above timestamp
+01/11/2016 21:32:44 - 
+Alphalog.py does not read log before prompting for new log. add this
+01/11/2016 21:33:33 - 
+Also, add print log after adding new log
+01/11/2016 21:36:01 - 
+correction, Alphalog.py does print log file before and after new log
+01/17/2016 18:22:53 - 
